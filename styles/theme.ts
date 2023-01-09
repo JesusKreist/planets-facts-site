@@ -11,10 +11,10 @@ const breakpoints = {
 const theme = extendTheme({
   textStyles: {
     h1: {
-      fontSize: ["80px"],
-      fontWeight: "medium",
-      fontFamily: "Antonio",
-      lineHeight: "103px",
+      "font-size": "80px",
+      "font-weight": "medium",
+      "font-family": "Fira Code",
+      "line-height": "103px",
     },
     h2: {
       fontSize: ["40px"],
