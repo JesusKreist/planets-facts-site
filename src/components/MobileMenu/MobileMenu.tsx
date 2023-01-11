@@ -10,6 +10,7 @@ import {
   OmitCommonProps,
   Text,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import { SVGProps, useEffect, useState } from "react";
 import { useMobileMenuStore } from "../../store/state";
 
@@ -43,7 +44,12 @@ interface MenuItemProps {
 }
 const MenuItem: React.FC<MenuItemProps> = ({ planetName, iconColour }) => {
   return (
-    <Flex gridColumn="2 / -2" alignItems="center" gap="1rem">
+    <Flex
+      gridColumn="2 / -2"
+      alignItems="center"
+      gap="1rem"
+      className="menu-item"
+    >
       <MenuItemIcon boxSize={"20px"} color={iconColour} />
 
       <Text
@@ -56,7 +62,9 @@ const MenuItem: React.FC<MenuItemProps> = ({ planetName, iconColour }) => {
         {planetName.toUpperCase()}
       </Text>
 
-      <ChevronRightIcon boxSize={5} color="gray.500" marginLeft="auto" />
+      <Box marginLeft="auto" as={Link} href={`/${planetName}`}>
+        <ChevronRightIcon boxSize={5} color="gray.500" />
+      </Box>
     </Flex>
   );
 };

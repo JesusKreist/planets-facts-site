@@ -9,18 +9,15 @@ interface MobileMenuState {
 
 export const useMobileMenuStore = create<MobileMenuState>()(
   devtools(
-    persist(
-      (set) => ({
-        isOpen: false,
-        toggle: () =>
-          set((state) => {
-            console.log("toggled");
-            return { isOpen: !state.isOpen };
-          }),
-      }),
-      {
-        name: "bear-storage",
-      }
-    )
+    (set) => ({
+      isOpen: true,
+      toggle: () =>
+        set((state) => {
+          return { isOpen: !state.isOpen };
+        }),
+    }),
+    {
+      name: "mobile-menu",
+    }
   )
 );
