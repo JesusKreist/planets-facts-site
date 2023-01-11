@@ -49,6 +49,8 @@ const MenuItem: React.FC<MenuItemProps> = ({ planetName, iconColour }) => {
       alignItems="center"
       gap="1rem"
       className="menu-item"
+      borderBottomWidth="1px"
+      borderBottomColor="rgb(151, 151, 151, 0.1)"
     >
       <MenuItemIcon boxSize={"20px"} color={iconColour} />
 
