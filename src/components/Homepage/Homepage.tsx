@@ -1,18 +1,21 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Flex, Grid } from "@chakra-ui/react";
 import React from "react";
+import MobileMenu from "../MobileMenu/MobileMenu";
 import NavBar from "../NavBar/NavBar";
 
 const Homepage = () => {
   return (
     <Box
+      position="relative"
       border="2px solid blue"
       width="100vw"
-      height="100vh"
+      minHeight="100vh"
       bgImage="/assets/background-stars.svg"
-      // bgSize="cover"
       bgColor="#070724"
     >
       <NavBar />
+      <MobileMenu />
+      {/* <Box>Testing to see if the text shows under</Box> */}
     </Box>
   );
 };

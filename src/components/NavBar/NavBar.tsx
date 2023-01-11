@@ -1,11 +1,17 @@
-import { Box, Grid, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Grid, Heading, Text } from "@chakra-ui/react";
 import React from "react";
 import NavBarLinks from "./NavBarLinks";
 
 const NavBar = () => {
   return (
     <Grid
-      templateColumns={{ md: "repeat(19, 1fr)", lg: "repeat(37, 1fr)" }}
+      className="nav-bar"
+      position="relative"
+      templateColumns={{
+        base: "repeat(14, 1fr)",
+        md: "repeat(19, 1fr)",
+        lg: "repeat(37, 1fr)",
+      }}
       color="white"
       maxWidth={{ "2xl": "1440px" }}
       border={{
@@ -15,18 +21,18 @@ const NavBar = () => {
         xl: "2px solid blue",
         "2xl": "2px solid green",
       }}
-      height={{ base: "160px", xl: "max(8vh, 80px)" }}
+      height={{ base: "67px", md: "160px", xl: "max(8vh, 80px)" }}
       margin="0 auto"
-      alignContent={{ md: "space-evenly", lg: "center" }}
-      // alignContent="space-evenly"
+      alignContent={{ base: "center", md: "space-evenly", lg: "center" }}
     >
       <Heading
         as="h1"
+        alignSelf="center"
         fontFamily="Antonio"
         fontSize="1.75rem"
         letterSpacing="-1.05px"
         margin={{ md: "0 auto", lg: "unset" }}
-        gridColumn={{ md: "1 / -1", lg: "2 / span 5" }}
+        gridColumn={{ base: "2 / span 5", md: "1 / -1", lg: "2 / span 5" }}
       >
         THE PLANETS
       </Heading>

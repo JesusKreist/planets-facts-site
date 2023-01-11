@@ -8,6 +8,19 @@ const breakpoints = {
   "2xl": "1440px",
 };
 
+const colors = {
+  planets: {
+    mercury: "#419EBB",
+    venus: "#EDA249",
+    earth: "#6f2ed6",
+    mars: "#D14C32",
+    jupiter: "#D83A34",
+    saturn: "#CD5120",
+    uranus: "#1ec2a4",
+    neptune: "#2d68f0",
+  },
+};
+
 const theme = extendTheme({
   textStyles: {
     h1: {
@@ -42,6 +55,7 @@ const theme = extendTheme({
     },
   },
   breakpoints,
+  colors,
 });
 
 export default theme;
