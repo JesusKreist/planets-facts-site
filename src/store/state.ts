@@ -12,7 +12,11 @@ export const useMobileMenuStore = create<MobileMenuState>()(
     persist(
       (set) => ({
         isOpen: false,
-        toggle: () => set((state) => ({ isOpen: !state.isOpen })),
+        toggle: () =>
+          set((state) => {
+            console.log("toggled");
+            return { isOpen: !state.isOpen };
+          }),
       }),
       {
         name: "bear-storage",

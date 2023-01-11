@@ -1,7 +1,7 @@
 // import { HamburgerIcon } from "@chakra-ui/icons";
 import { Flex, Heading, IconButton, Text } from "@chakra-ui/react";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import customHamburger from "../../../public/assets/icon-hamburger.svg";
 import { useMobileMenuStore } from "../../store/state";
@@ -21,6 +21,15 @@ interface HamburgerIconProps {
   isMenuOpen: boolean;
 }
 const HamburgerIcon: React.FC<HamburgerIconProps> = ({ isMenuOpen }) => {
+  // if (isMenuOpen) {
+  //   return (
+  //     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="17">
+  //       <g fill="#718096" fillRule="evenodd">
+  //         <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z" />
+  //       </g>
+  //     </svg>
+  //   );
+  // }
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="17">
       <g fill={isMenuOpen ? "#718096" : "#FFF"} fillRule="evenodd">
@@ -58,6 +67,16 @@ const NavBarLinks = () => {
   const isMobileMenuOpen = useMobileMenuStore((state) => state.isOpen);
   const toggleMobileMenu = useMobileMenuStore((state) => state.toggle);
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // const toggleMenu = () => {
+  //   setIsMenuOpen(!isMenuOpen);
+  // };
+
+  useEffect(() => {
+    setIsMenuOpen(isMobileMenuOpen);
+  }, [isMobileMenuOpen]);
+
   return (
     <>
       <Flex
@@ -81,7 +100,7 @@ const NavBarLinks = () => {
         ))}
       </Flex>
       <MobileMenuIcon
-        isMenuOpen={isMobileMenuOpen}
+        isMenuOpen={isMenuOpen}
         setIsMenuOpen={toggleMobileMenu}
       />
     </>

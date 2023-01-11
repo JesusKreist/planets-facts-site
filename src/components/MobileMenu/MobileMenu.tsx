@@ -10,7 +10,7 @@ import {
   OmitCommonProps,
   Text,
 } from "@chakra-ui/react";
-import { SVGProps } from "react";
+import { SVGProps, useEffect, useState } from "react";
 import { useMobileMenuStore } from "../../store/state";
 
 const planetsWithIconsColor = [
@@ -63,6 +63,13 @@ const MenuItem: React.FC<MenuItemProps> = ({ planetName, iconColour }) => {
 
 const MobileMenu = () => {
   const isMobileMenuOpen = useMobileMenuStore((state) => state.isOpen);
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setIsMenuOpen(isMobileMenuOpen);
+  }, [isMobileMenuOpen]);
+
   return (
     <Grid
       className="mobile-menu"
@@ -71,7 +78,7 @@ const MobileMenu = () => {
       height="487px"
       width="100%"
       border="2px solid green"
-      display={{ base: `${isMobileMenuOpen ? "grid" : "none"}`, md: "none" }}
+      display={{ base: `${isMenuOpen ? "grid" : "none"}`, md: "none" }}
     >
       {planetsWithIconsColor.map((planet) => (
         <MenuItem

@@ -16,13 +16,26 @@ import "@fontsource/antonio/500.css";
 import "@fontsource/antonio/600.css";
 import "@fontsource/antonio/700.css";
 import type { AppProps } from "next/app";
-import { ChakraProvider } from "@chakra-ui/react";
+import { Box, ChakraProvider } from "@chakra-ui/react";
 import theme from "../styles/theme";
+import MobileMenu from "../src/components/MobileMenu/MobileMenu";
+import NavBar from "../src/components/NavBar/NavBar";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme} resetCSS>
-      <Component {...pageProps} />
+      <Box
+        position="relative"
+        border="2px solid blue"
+        width="100vw"
+        minHeight="100vh"
+        bgImage="/assets/background-stars.svg"
+        bgColor="#070724"
+      >
+        <NavBar />
+        <MobileMenu />
+        <Component {...pageProps} />
+      </Box>
     </ChakraProvider>
   );
 }
