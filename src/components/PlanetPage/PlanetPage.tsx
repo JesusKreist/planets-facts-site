@@ -1,6 +1,7 @@
 import { Box, Flex, Grid, Text } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import useAvailableScreenSize from "../../../hooks/useAvailableScreenSize";
+import PlanetInfoButtons from "./PlanetInfoButtons";
 
 const PlanetPage = () => {
   // const router = useRouter();
@@ -55,61 +56,9 @@ const PlanetPage = () => {
         // alignContent=
       >
         <Box border="2px solid red"></Box>
-        <Flex
-          // border="2px solid blue"
-          direction="column"
-          justifyContent="space-between"
-        >
-          <Flex
-            bgColor={`planets.${"mercury".toLocaleLowerCase()}`}
-            paddingBlock="0.3rem"
-            paddingLeft="2rem"
-            gap="1rem"
-            width="100%"
-            height="48px"
-            alignItems="center"
-          >
-            <Text
-              fontFamily="spartan"
-              fontWeight="bold"
-              fontSize="0.75rem"
-              lineHeight="25px"
-              letterSpacing="2.57px"
-              opacity={0.5}
-            >
-              01
-            </Text>
-            <Text
-              fontFamily="spartan"
-              fontWeight="bold"
-              fontSize="0.75rem"
-              lineHeight="25px"
-              letterSpacing="2.57px"
-            >
-              OVERVIEW
-            </Text>
-          </Flex>
-          <Flex
-            border="1px solid white"
-            paddingBlock="0.3rem"
-            width="100%"
-            height="48px"
-            alignItems="center"
-          ></Flex>
-          <Flex
-            border="1px solid white"
-            paddingBlock="0.3rem"
-            width="100%"
-            height="48px"
-            alignItems="center"
-          ></Flex>
-        </Flex>
+        <PlanetInfoButtons />
       </Grid>
-      {/* <Box
-        border="2px solid yellow"
-        gridColumn="24 / span 9"
-        gridRow="13 / span 5"
-      ></Box> */}
+
       <Grid
         className="planet-info__specs"
         // border="2px solid blue"
