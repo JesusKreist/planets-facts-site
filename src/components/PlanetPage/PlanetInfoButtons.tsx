@@ -1,5 +1,6 @@
 import { Flex, Text } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { usePlanetsStore } from "../../store/planetsStore";
 
 interface PlanetInfoButtonProps {
   planetColour: string;
@@ -62,8 +63,16 @@ interface PlanetInfoSwitcherProps {
 }
 
 const PlanetInfoSwitcher = () => {
-  const planetName = "mercury";
-  const planetColour = `planets.${planetName}`;
+  const planet = usePlanetsStore((state) => state.currentPlanet);
+  const [currentPlanet, setCurrentPlanet] = useState(planet);
+
+  useEffect(() => {
+    setCurrentPlanet(planet);
+  }, [planet, setCurrentPlanet]);
+
+  //   const planetName = "mercury";
+  const planetColour = `planets.${currentPlanet.name.toLocaleLowerCase()}`;
+  console.log(planetColour);
 
   return (
     <Flex

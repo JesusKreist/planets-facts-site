@@ -1,24 +1,39 @@
 import { Box, Flex, Grid, Text } from "@chakra-ui/react";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import useAvailableScreenSize from "../../../hooks/useAvailableScreenSize";
+import { getPlanetDataByName } from "../../data/data";
+import { CurrentPlanet, usePlanetsStore } from "../../store/planetsStore";
 import PlanetInfoButtons from "./PlanetInfoButtons";
 
 const PlanetPage = () => {
-  // const router = useRouter();
-  // const { planet } = router.query;
-
-  // if (!planet) {
-  //   return <Box>loading...</Box>;
-  // }
-
-  // const planetData = getPlanetDataByName(planet as string);
-  // if (!planetData) {
-  //   return <Box>404</Box>;
-  // }
-
-  // console.log("planetData :>> ", planetData);
-
+  const router = useRouter();
   const { width, height } = useAvailableScreenSize();
+  const { planet } = router.query;
+  //   const [planetDataFromFile, setplanetDataFromFile] = useState<CurrentPlanet>()
+  const { currentPlanet, setCurrentPlanet } = usePlanetsStore();
+
+  useEffect(() => {
+    setCurrentPlanet(planet as string | undefined);
+  }, [planet, setCurrentPlanet]);
+
+  if (!planet) {
+    return <Box>loading...</Box>;
+  }
+
+  //   const planet = "mercury";
+  //   const planetData = getPlanetDataByName(planet as string);
+  //   useEffect(() => {
+  //     setCurrentPlanet(planetData);
+  //   }, [planetData]);
+
+  //   if (!planetData) {
+  //     return <Box>404</Box>;
+  //   }
+
+  //   setCurrentPlanet(planetData);
+
+  console.log("planetData :>> ", currentPlanet);
 
   console.log("width :>> ", width);
   console.log("height :>> ", height);
