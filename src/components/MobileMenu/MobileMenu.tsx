@@ -49,7 +49,9 @@ const MenuItem: React.FC<MenuItemProps> = ({ planetName, iconColour }) => {
       alignItems="center"
       gap="1rem"
       className="menu-item"
-      borderBottomWidth="1px"
+      borderBottomWidth={
+        planetName.toLocaleLowerCase() === "neptune" ? "0px" : "1px"
+      }
       borderBottomColor="rgb(151, 151, 151, 0.1)"
     >
       <MenuItemIcon boxSize={"20px"} color={iconColour} />
@@ -87,7 +89,7 @@ const MobileMenu = () => {
       position="absolute"
       height="487px"
       width="100%"
-      border="2px solid green"
+      // border="2px solid green"
       display={{ base: `${isMenuOpen ? "grid" : "none"}`, md: "none" }}
     >
       {planetsWithIconsColor.map((planet) => (

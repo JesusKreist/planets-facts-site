@@ -21,7 +21,7 @@ const NavBar = () => {
         xl: "2px solid blue",
         "2xl": "2px solid green",
       }}
-      height={{ base: "67px", md: "160px", xl: "max(8vh, 80px)" }}
+      height={{ base: "67px", md: "160px", lg: "max(8vh, 80px)" }}
       margin="0 auto"
       alignContent={{ base: "center", md: "space-evenly", lg: "center" }}
     >

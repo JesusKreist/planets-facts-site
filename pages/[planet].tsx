@@ -1,7 +1,7 @@
-import React from "react";
+import PlanetPage from "../src/components/PlanetPage/PlanetPage";
 
-const planet = () => {
-  return <div>planet</div>;
+const Planet = () => {
+  return <PlanetPage />;
 };
 
-export default planet;
+export default Planet;

@@ -25,8 +25,8 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme} resetCSS>
       <Box
+        color="white"
         position="relative"
-        border="2px solid blue"
         width="100vw"
         minHeight="100vh"
         bgImage="/assets/background-stars.svg"

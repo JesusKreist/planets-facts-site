@@ -10,7 +10,7 @@ interface MobileMenuState {
 export const useMobileMenuStore = create<MobileMenuState>()(
   devtools(
     (set) => ({
-      isOpen: true,
+      isOpen: false,
       toggle: () =>
         set((state) => {
           return { isOpen: !state.isOpen };
