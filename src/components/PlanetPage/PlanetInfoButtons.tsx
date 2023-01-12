@@ -21,7 +21,8 @@ const PlanetInfoButton: React.FC<PlanetInfoButtonProps> = ({
       paddingLeft="2rem"
       gap="1rem"
       width="100%"
-      height="48px"
+      //   height="48px"
+      height="28%"
       alignItems="center"
       borderWidth={isActive ? "0px" : "2px"}
       borderColor={isActive ? "transparent" : "rgb(151, 151, 151, 0.2)"}
@@ -73,7 +74,6 @@ const PlanetInfoSwitcher = () => {
       <PlanetInfoButton
         infoNumber={1}
         infoTitle="OVERVIEW"
-        // infoTitle="INTERNAL STRUCTURE"
         isActive={true}
         planetColour={planetColour}
       />

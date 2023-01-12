@@ -22,7 +22,7 @@ const PlanetPage = () => {
 
   console.log("width :>> ", width);
   console.log("height :>> ", height);
-  const minHeightForLargeScreens = `${(height * 78) / 100}px`;
+  const minHeightForLargeScreens = `max(${(height * 78) / 100}px, 944px)`;
   console.log("minHeightForLargeScreens", minHeightForLargeScreens);
 
   return (
@@ -51,7 +51,7 @@ const PlanetPage = () => {
         // border="2px solid teal"
         gridColumn="24 / span 9"
         gridRow="5 / span 13"
-        templateRows="1fr 176px"
+        templateRows="1fr 33.8%"
         gap="2rem"
         // alignContent=
       >
