@@ -5,6 +5,7 @@ import useAvailableScreenSize from "../../../hooks/useAvailableScreenSize";
 import { getPlanetDataByName } from "../../data/data";
 import { CurrentPlanet, usePlanetsStore } from "../../store/planetsStore";
 import PlanetInfoButtons from "./PlanetInfoButtons";
+import PlanetInfoText from "./PlanetInfoText";
 
 const PlanetPage = () => {
   const router = useRouter();
@@ -70,7 +71,7 @@ const PlanetPage = () => {
         gap="2rem"
         // alignContent=
       >
-        <Box border="2px solid red"></Box>
+        <PlanetInfoText />
         <PlanetInfoButtons />
       </Grid>
 
