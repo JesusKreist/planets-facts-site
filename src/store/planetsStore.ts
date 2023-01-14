@@ -28,9 +28,13 @@ export interface CurrentPlanet {
   };
 }
 
+type PlanetInfo = "overview" | "structure" | "geology";
+
 interface PlanetsState {
   currentPlanet: CurrentPlanet;
+  planetInfo: PlanetInfo;
   setCurrentPlanet: (planet: string | undefined) => void;
+  setPlanetInfo: (info: PlanetInfo) => void;
 }
 
 const defaultPlanet: CurrentPlanet = {
@@ -65,6 +69,7 @@ export const usePlanetsStore = create<PlanetsState>()(
   devtools(
     (set) => ({
       currentPlanet: defaultPlanet,
+      planetInfo: "overview",
       setCurrentPlanet: (planet) => {
         if (!planet) {
           set({ currentPlanet: defaultPlanet });
@@ -72,6 +77,9 @@ export const usePlanetsStore = create<PlanetsState>()(
         }
         const planetData = getPlanetDataByName(planet);
         set({ currentPlanet: planetData });
+      },
+      setPlanetInfo: (info: PlanetInfo) => {
+        set({ planetInfo: info });
       },
     }),
     {
