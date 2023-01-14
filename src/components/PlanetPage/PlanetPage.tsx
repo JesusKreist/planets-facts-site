@@ -34,12 +34,12 @@ const PlanetPage = () => {
 
   //   setCurrentPlanet(planetData);
 
-  console.log("planetData :>> ", currentPlanet);
+  // console.log("planetData :>> ", currentPlanet);
 
-  console.log("width :>> ", width);
-  console.log("height :>> ", height);
+  // console.log("width :>> ", width);
+  // console.log("height :>> ", height);
   const minHeightForLargeScreens = `max(${(height * 78) / 100}px, 944px)`;
-  console.log("minHeightForLargeScreens", minHeightForLargeScreens);
+  // console.log("minHeightForLargeScreens", minHeightForLargeScreens);
 
   return (
     <Grid
