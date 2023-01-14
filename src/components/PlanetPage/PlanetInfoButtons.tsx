@@ -62,21 +62,9 @@ const PlanetInfoButton: React.FC<PlanetInfoButtonProps> = ({
 
 const PlanetInfoSwitcher = () => {
   const planet = usePlanetsStore((state) => state.currentPlanet);
-  const [currentPlanet, setCurrentPlanet] = useState(planet);
   const { planetInfo, setPlanetInfo } = usePlanetsStore();
-  const [currentPlanetInfo, setCurrentPlanetInfo] = useState("overview");
 
-  useEffect(() => {
-    setCurrentPlanet(planet);
-  }, [planet, setCurrentPlanet]);
-
-  useEffect(() => {
-    setCurrentPlanetInfo(planetInfo);
-  }, [planetInfo, setCurrentPlanetInfo]);
-
-  //   const planetName = "mercury";
-  const planetColour = `planets.${currentPlanet.name.toLocaleLowerCase()}`;
-  // console.log(planetColour);
+  const planetColour = `planets.${planet.name.toLocaleLowerCase()}`;
 
   return (
     <Flex
@@ -87,21 +75,21 @@ const PlanetInfoSwitcher = () => {
       <PlanetInfoButton
         infoNumber={1}
         infoTitle="OVERVIEW"
-        isActive={currentPlanetInfo === "overview"}
+        isActive={planetInfo === "overview"}
         planetColour={planetColour}
         onClick={() => setPlanetInfo("overview")}
       />
       <PlanetInfoButton
         infoNumber={2}
         infoTitle="INTERNAL STRUCTURE"
-        isActive={currentPlanetInfo === "structure"}
+        isActive={planetInfo === "structure"}
         planetColour={planetColour}
         onClick={() => setPlanetInfo("structure")}
       />
       <PlanetInfoButton
         infoNumber={3}
         infoTitle="SURFACE GEOLOGY"
-        isActive={currentPlanetInfo === "geology"}
+        isActive={planetInfo === "geology"}
         planetColour={planetColour}
         onClick={() => setPlanetInfo("geology")}
       />
