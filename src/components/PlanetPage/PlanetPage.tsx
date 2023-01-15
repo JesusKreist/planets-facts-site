@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import useAvailableScreenSize from "../../../hooks/useAvailableScreenSize";
 import { getPlanetDataByName } from "../../data/data";
 import { CurrentPlanet, usePlanetsStore } from "../../store/planetsStore";
+import PlanetImage from "./PlanetImage";
 import PlanetInfoButtons from "./PlanetInfoButtons";
 import PlanetInfoText from "./PlanetInfoText";
 
@@ -58,11 +59,7 @@ const PlanetPage = () => {
       templateRows="repeat(24, 1fr)"
       templateColumns="repeat(36, 1fr)"
     >
-      <Box
-        border="2px solid white"
-        gridColumn="9 / span 8"
-        gridRow="7 / span 9"
-      ></Box>
+      <PlanetImage />
       <Grid
         // border="2px solid teal"
         gridColumn="24 / span 9"
