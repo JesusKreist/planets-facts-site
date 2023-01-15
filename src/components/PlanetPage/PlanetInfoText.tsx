@@ -21,7 +21,7 @@ const PlanetInfoText = () => {
         fontSize="5rem"
         fontFamily="Antonio"
         fontWeight="medium"
-        height="31.9%"
+        // height="31.9%"
       >
         {currentPlanet.name}
       </Text>

@@ -40,6 +40,7 @@ const PlanetPage = () => {
   // console.log("width :>> ", width);
   // console.log("height :>> ", height);
   const minHeightForLargeScreens = `max(${(height * 78) / 100}px, 944px)`;
+  // const minHeightForLargeScreens = `90vh`;
   // console.log("minHeightForLargeScreens", minHeightForLargeScreens);
 
   return (
@@ -63,7 +64,8 @@ const PlanetPage = () => {
       <Grid
         // border="2px solid teal"
         gridColumn="24 / span 9"
-        gridRow="5 / span 13"
+        // gridRow="5 / span 13"
+        gridRow="3 / span 14"
         templateRows="1fr 33.8%"
         gap="2rem"
         // alignContent=
@@ -76,7 +78,7 @@ const PlanetPage = () => {
         className="planet-info__specs"
         // border="2px solid blue"
         gridColumn="5 / -5"
-        gridRow="span 4 / -2"
+        gridRow="span 4 / -3"
         gap="2rem"
         templateColumns="repeat(4, 1fr)"
       >
