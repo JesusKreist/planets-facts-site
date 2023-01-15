@@ -1,5 +1,6 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
-import Link from "next/link";
+import NextLink from "next/link";
+import { Link } from "@chakra-ui/react";
 import { usePlanetsStore } from "../../store/planetsStore";
 
 const PlanetInfoText = () => {
@@ -41,8 +42,9 @@ const PlanetInfoText = () => {
         >
           Source:{" "}
         </Text>
-        <Flex
-          as={Link}
+        <Link
+          as={NextLink}
+          isExternal
           alignItems="center"
           gap="0.5rem"
           display="inline-flex"
@@ -58,7 +60,7 @@ const PlanetInfoText = () => {
               opacity=".5"
             />
           </svg>
-        </Flex>
+        </Link>
       </Box>
     </Flex>
   );
