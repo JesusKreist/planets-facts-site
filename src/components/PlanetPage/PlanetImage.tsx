@@ -1,4 +1,4 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, Image } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { usePlanetsStore } from "../../store/planetsStore";
 
@@ -31,18 +31,17 @@ const PlanetImage = () => {
     <Flex
       alignItems="center"
       // border="2px solid white"
-      gridColumn="9 / span 8"
-      gridRow="5 / span 9"
+      gridColumn="5 / 20"
+      gridRow="3 / 18"
       position="relative"
-      // gridRow="7 / span 9"
     >
       <Box
         className="planet-image__geology"
         // border="1px solid red"
-        width="56.2%"
+        width="25.2%"
         height="58.62%"
-        top="75%"
-        left="22.2%"
+        top="50%"
+        left="37.6%"
         position="absolute"
         bgImage={`/assets/geology-${planetName}.png`}
         bgSize="contain"
@@ -50,14 +49,23 @@ const PlanetImage = () => {
         bgPosition="center"
         display={planetInfo === "geology" ? "block" : "none"}
       ></Box>
-      <Box
+      {/* <Box
         width="100%"
         height="0"
         paddingBottom="100%"
         bgImage={currentImage}
         bgSize="cover"
-        rounded="full"
-        // border="1px solid red"
+        border="3px solid red"
+      ></Box> */}
+      <Box
+        width="100%"
+        // height="0"
+        paddingBottom="100%"
+        bgImage={currentImage}
+        bgSize="auto"
+        bgRepeat="no-repeat"
+        bgPosition="center"
+        // border="3px solid red"
       ></Box>
     </Flex>
   );
