@@ -1,9 +1,6 @@
-// import { HamburgerIcon } from "@chakra-ui/icons";
-import { Flex, Heading, IconButton, Text } from "@chakra-ui/react";
-import Image from "next/image";
+import { Flex, Heading, IconButton } from "@chakra-ui/react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
-import { RxHamburgerMenu } from "react-icons/rx";
-import customHamburger from "../../../public/assets/icon-hamburger.svg";
 import { useMobileMenuStore } from "../../store/state";
 
 const planets = [
@@ -21,15 +18,6 @@ interface HamburgerIconProps {
   isMenuOpen: boolean;
 }
 const HamburgerIcon: React.FC<HamburgerIconProps> = ({ isMenuOpen }) => {
-  // if (isMenuOpen) {
-  //   return (
-  //     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="17">
-  //       <g fill="#718096" fillRule="evenodd">
-  //         <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z" />
-  //       </g>
-  //     </svg>
-  //   );
-  // }
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="17">
       <g fill={isMenuOpen ? "#718096" : "#FFF"} fillRule="evenodd">
@@ -54,9 +42,6 @@ const MobileMenuIcon: React.FC<MobileMenuIconProps> = ({
     justifyContent="end"
     alignItems="center"
     variant="unstyled"
-    // icon={
-    //   <HamburgerIcon boxSize="8" color={isMobileOpen ? "gray.500" : "white"} />
-    // }
     icon={<HamburgerIcon isMenuOpen={isMenuOpen} />}
     aria-label="Open Menu"
     display={{ base: "inline-flex", md: "none" }}
@@ -68,10 +53,6 @@ const NavBarLinks = () => {
   const toggleMobileMenu = useMobileMenuStore((state) => state.toggle);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // const toggleMenu = () => {
-  //   setIsMenuOpen(!isMenuOpen);
-  // };
 
   useEffect(() => {
     setIsMenuOpen(isMobileMenuOpen);
@@ -87,16 +68,17 @@ const NavBarLinks = () => {
         alignItems="center"
       >
         {planets.map((planet) => (
-          <Heading
-            as="h4"
-            fontSize="0.6875rem"
-            fontFamily="Spartan"
-            lineHeight="1.5625rem"
-            letterSpacing="1px"
-            key={Math.random() * 1000}
-          >
-            {planet.toUpperCase()}
-          </Heading>
+          <Link href={`/${planet.toLowerCase()}`} key={Math.random() * 1000}>
+            <Heading
+              as="h4"
+              fontSize="0.6875rem"
+              fontFamily="Spartan"
+              lineHeight="1.5625rem"
+              letterSpacing="1px"
+            >
+              {planet.toUpperCase()}
+            </Heading>
+          </Link>
         ))}
       </Flex>
       <MobileMenuIcon
