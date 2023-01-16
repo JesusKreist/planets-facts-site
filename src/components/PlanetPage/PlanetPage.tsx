@@ -64,7 +64,7 @@ const PlanetPage = () => {
       <PlanetImage />
       <Grid
         // border="2px solid teal"
-        gridColumn={{ lg: "23 / span 11", xl: "24 / span 9" }}
+        gridColumn={{ lg: "24 / span 11", xl: "24 / span 9" }}
         gridRow="3 / span 14"
         templateRows="1fr 33.8%"
         gap="2rem"

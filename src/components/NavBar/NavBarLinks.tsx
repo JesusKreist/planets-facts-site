@@ -64,7 +64,7 @@ const NavBarLinks = () => {
         gridRow={{ base: "1 / 2", md: "unset" }}
         display={{ base: "none", md: "flex" }}
         justifyContent="space-between"
-        gridColumn={{ md: "2 / -2", lg: "18 / -2", xl: "20 / -2" }}
+        gridColumn={{ md: "2 / -2", lg: "span 20 / -3", xl: "20 / -2" }}
         alignItems="center"
       >
         {planets.map((planet) => (

@@ -32,7 +32,12 @@ const NavBar = () => {
         fontSize="1.75rem"
         letterSpacing="-1.05px"
         margin={{ md: "0 auto", lg: "unset" }}
-        gridColumn={{ base: "2 / span 5", md: "1 / -1", lg: "2 / span 5" }}
+        gridColumn={{
+          base: "2 / span 5",
+          md: "1 / -1",
+          lg: "3 / span 5",
+          xl: "2 / span 5",
+        }}
       >
         THE PLANETS
       </Heading>

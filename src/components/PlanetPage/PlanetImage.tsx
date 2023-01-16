@@ -33,7 +33,7 @@ const PlanetImage = () => {
     <Flex
       alignItems="center"
       // border="2px solid white"
-      gridColumn={{ lg: "3 / 20", xl: "5 / 20" }}
+      gridColumn={{ lg: "3 / 21", xl: "5 / 20" }}
       gridRow="3 / 18"
       position="relative"
     >

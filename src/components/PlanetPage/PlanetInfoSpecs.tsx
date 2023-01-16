@@ -53,7 +53,7 @@ const PlanetInfoSpecs = () => {
   return (
     <Grid
       className="planet-info__specs"
-      gridColumn="5 / -5"
+      gridColumn={{ lg: "3 / -3", xl: "5 / -5" }}
       gridRow="span 4 / -3"
       gap="2rem"
       templateColumns="repeat(4, 1fr)"
