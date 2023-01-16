@@ -6,6 +6,7 @@ import { getPlanetDataByName } from "../../data/data";
 import { CurrentPlanet, usePlanetsStore } from "../../store/planetsStore";
 import PlanetImage from "./PlanetImage";
 import PlanetInfoButtons from "./PlanetInfoButtons";
+import PlanetInfoSpecs from "./PlanetInfoSpecs";
 import PlanetInfoText from "./PlanetInfoText";
 
 const PlanetPage = () => {
@@ -39,7 +40,7 @@ const PlanetPage = () => {
 
   // console.log("width :>> ", width);
   // console.log("height :>> ", height);
-  const minHeightForLargeScreens = `max(${(height * 78) / 100}px, 944px)`;
+  const minHeightForLargeScreens = `max(${(height * 78) / 100}px, 938px)`;
   // const minHeightForLargeScreens = `90vh`;
   // console.log("minHeightForLargeScreens", minHeightForLargeScreens);
 
@@ -74,39 +75,7 @@ const PlanetPage = () => {
         <PlanetInfoButtons />
       </Grid>
 
-      <Grid
-        className="planet-info__specs"
-        // border="2px solid blue"
-        gridColumn="5 / -5"
-        gridRow="span 4 / -3"
-        gap="2rem"
-        templateColumns="repeat(4, 1fr)"
-      >
-        <Box
-          height="100%"
-          border="1px solid white"
-          // gridColumn="1 / span 6"
-          // gridRow="1"
-        ></Box>
-        <Box
-          height="100%"
-          border="1px solid white"
-          // gridColumn="8 / span 6"
-          // gridRow="1"
-        ></Box>
-        <Box
-          height="100%"
-          border="1px solid white"
-          // gridColumn="15 / span 6"
-          // gridRow="1"
-        ></Box>
-        <Box
-          height="100%"
-          border="1px solid white"
-          // gridColumn="2 / span 6"
-          // gridRow="1"
-        ></Box>
-      </Grid>
+      <PlanetInfoSpecs />
     </Grid>
   );
 };
