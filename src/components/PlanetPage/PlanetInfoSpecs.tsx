@@ -58,10 +58,10 @@ const PlanetInfoSpecs = () => {
       gap="2rem"
       templateColumns="repeat(4, 1fr)"
     >
-      <PlanetInfoSpec specName="rotation" specValue={rotation} />
-      <PlanetInfoSpec specName="revolution" specValue={revolution} />
+      <PlanetInfoSpec specName="rotation time" specValue={rotation} />
+      <PlanetInfoSpec specName="revolution time" specValue={revolution} />
       <PlanetInfoSpec specName="radius" specValue={radius} />
-      <PlanetInfoSpec specName="temperature" specValue={temperature} />
+      <PlanetInfoSpec specName="average temp." specValue={temperature} />
     </Grid>
   );
 };
