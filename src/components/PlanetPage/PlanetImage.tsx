@@ -10,6 +10,8 @@ const PlanetImage = () => {
   const [currentImage, setCurrentImage] = useState(
     `/assets/planet-${planetName}.svg`
   );
+  const planetIsSaturnOrJupiter =
+    planetName === "jupiter" || planetName === "saturn";
 
   useEffect(() => {
     switch (planetInfo) {
@@ -31,7 +33,7 @@ const PlanetImage = () => {
     <Flex
       alignItems="center"
       // border="2px solid white"
-      gridColumn="5 / 20"
+      gridColumn={{ lg: "3 / 20", xl: "5 / 20" }}
       gridRow="3 / 18"
       position="relative"
     >
@@ -62,7 +64,8 @@ const PlanetImage = () => {
         // height="0"
         paddingBottom="100%"
         bgImage={currentImage}
-        bgSize="auto"
+        bgSize={planetIsSaturnOrJupiter ? "contain" : "auto"}
+        // bgSize="contain"
         bgRepeat="no-repeat"
         bgPosition="center"
         // border="3px solid red"
