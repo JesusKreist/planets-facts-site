@@ -56,16 +56,15 @@ const PlanetImage = () => {
       justifyContent="center"
       border="2px solid white"
       gridColumn={{ md: "3 / -3", lg: "3 / 21", xl: "5 / 20" }}
-      gridRow={{ md: "3 / 15", lg: "3 / 18" }}
+      gridRow={{ lg: "3 / 18" }}
       position="relative"
     >
       <Box
         className="planet-image__geology"
-        // border="1px solid red"
-        width="25.2%"
+        width={{ md: "15%", lg: "25.2%" }}
         height="58.62%"
         top="50%"
-        left="37.6%"
+        left={{ md: "unset", lg: "37.6%" }}
         position="absolute"
         bgImage={`/assets/geology-${planetName}.png`}
         bgSize="contain"
