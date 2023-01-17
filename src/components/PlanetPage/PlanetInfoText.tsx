@@ -16,9 +16,14 @@ const PlanetInfoText = () => {
   // // const
 
   return (
-    <Flex direction="column" justifyContent="space-between">
+    <Flex
+      direction="column"
+      justifyContent="space-between"
+      gridColumn={{ md: "1 / span 13", lg: "unset" }}
+    >
       <Text
-        fontSize="5rem"
+        style={{ hyphens: "none" }}
+        fontSize={{ md: "3rem", lg: "5rem" }}
         fontFamily="Antonio"
         fontWeight="medium"
         // height="31.9%"
@@ -26,20 +31,16 @@ const PlanetInfoText = () => {
         {currentPlanet.name}
       </Text>
       <Text
-        fontSize="0.875rem"
+        fontSize={{ md: "0.6875rem", lg: "0.875rem" }}
         fontFamily="Spartan"
         fontWeight="normal"
-        lineHeight="1.5625rem"
+        lineHeight={{ md: "1.375rem", lg: "1.5625rem" }}
+        width={{ md: "339px", lg: "unset" }}
       >
         {planetInfoText}
       </Text>
-      <Box opacity="0.5">
-        <Text
-          as="span"
-          fontSize="0.875rem"
-          fontFamily="Spartan"
-          fontWeight="regular"
-        >
+      <Box opacity="0.5" fontSize={{ md: "0.75rem", lg: "0.875rem" }}>
+        <Text as="span" fontFamily="Spartan" fontWeight="regular">
           Source:{" "}
         </Text>
         <Link
@@ -50,7 +51,7 @@ const PlanetInfoText = () => {
           display="inline-flex"
           href={planetInfoSource}
         >
-          <Box fontSize="0.875rem" fontFamily="Spartan" fontWeight="bold">
+          <Box fontFamily="Spartan" fontWeight="bold">
             Wikipedia
           </Box>
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
