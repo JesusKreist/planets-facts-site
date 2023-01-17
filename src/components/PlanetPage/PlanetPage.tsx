@@ -74,7 +74,7 @@ const PlanetPage = () => {
         <PlanetInfoButtons />
       </Grid>
 
-      <PlanetInfoSpecs />
+      {/* <PlanetInfoSpecs /> */}
     </Grid>
   );
 };
