@@ -45,6 +45,7 @@ interface MenuItemProps {
 const MenuItem: React.FC<MenuItemProps> = ({ planetName, iconColour }) => {
   return (
     <Flex
+      zIndex="100"
       gridColumn="2 / -2"
       alignItems="center"
       gap="1rem"
