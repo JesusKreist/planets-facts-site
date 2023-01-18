@@ -65,7 +65,7 @@ const PlanetPage = () => {
     >
       <PlanetImage />
       <PlanetInfo />
-      <PlanetInfoSpecs />
+      {/* <PlanetInfoSpecs /> */}
     </Grid>
   );
 };

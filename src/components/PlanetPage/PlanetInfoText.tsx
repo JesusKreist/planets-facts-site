@@ -10,11 +10,6 @@ const PlanetInfoText = () => {
   const planetInfoText = `${currentPlanet[planetInfo].content}`;
   const planetInfoSource = `${currentPlanet[planetInfo].source}`;
 
-  // console.log("currentPlanet:>> ", currentPlanet);
-  // console.log("planetInfo:>> ", planetInfo);
-  // console.log(planetInfoText);
-  // // const
-
   return (
     <Flex
       direction="column"
@@ -27,6 +22,7 @@ const PlanetInfoText = () => {
         fontFamily="Antonio"
         fontWeight="medium"
         // height="31.9%"
+        height={{ md: "19.9%", lg: "unset" }}
       >
         {currentPlanet.name}
       </Text>
