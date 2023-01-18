@@ -54,14 +54,13 @@ const PlanetPage = () => {
         maxWidth={{ "2xl": "1440px" }}
         margin="0 auto"
         minHeight={{ lg: minHeightForLargeScreens }}
-        // height={{ base: "880px", md: "unset", xl: "unset" }}
-        border={{
-          base: "2px solid purple",
-          md: "2px solid yellow",
-          lg: "2px solid red",
-          xl: "2px solid blue",
-          "2xl": "2px solid green",
-        }}
+        // border={{
+        //   base: "2px solid purple",
+        //   md: "2px solid yellow",
+        //   lg: "2px solid red",
+        //   xl: "2px solid blue",
+        //   "2xl": "2px solid green",
+        // }}
         templateRows={{ md: "25.2rem 15.82rem 5.5rem ", lg: "repeat(24, 1fr)" }}
         rowGap={{ md: "2rem", lg: "0" }}
         paddingBottom={{ md: "2rem", lg: "0" }}
@@ -78,22 +77,30 @@ const PlanetPage = () => {
         className="planet-page-mobile"
         margin="0 auto"
         minHeight={{ lg: minHeightForLargeScreens }}
-        border="2px solid purple"
-        templateRows="3.125rem 18.75rem 2rem 14.6875rem 13.5rem"
-        paddingBottom={{ md: "2rem", lg: "0" }}
+        // border="2px solid purple"
+        templateRows="3.125rem 18.75rem 2rem 14.6875rem 2rem 13.5rem"
+        paddingBottom="2rem"
         templateColumns={{ base: "repeat(14, 1fr)", md: "repeat(36, 1fr)" }}
       >
         <PlanetInfoSwitcherMobile />
+
         <PlanetImage />
+
         <Box
           className="spacer-div"
-          border="2px solid white"
+          // border="2px solid white"
           gridColumn="1 / -1"
         ></Box>
+
         <PlanetInfoText />
 
-        {/* <PlanetInfo />
-      <PlanetInfoSpecs /> */}
+        <Box
+          className="spacer-div"
+          // border="2px solid white"
+          gridColumn="1 / -1"
+        ></Box>
+
+        <PlanetInfoSpecs />
       </Grid>
     </>
   );

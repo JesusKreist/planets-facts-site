@@ -13,7 +13,7 @@ const PlanetInfoSwitcherMobile = () => {
   return (
     <Grid
       gridColumn="1 / -1"
-      border="2px solid white"
+      // border="2px solid white"
       borderBottom="2px solid rgb(151, 151, 151, 0.2)"
       templateColumns="repeat(14, 1fr)"
       display={{ base: "grid", md: "none" }}

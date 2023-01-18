@@ -14,19 +14,24 @@ const PlanetInfoSpec: React.FC<PlanetInfoSpecProps> = ({
   return (
     <Flex
       height="100%"
-      border="1px solid white"
-      direction="column"
-      justifyContent="center"
-      paddingLeft="10%"
+      border={{
+        base: "2px solid rgb(151, 151, 151, 0.2)",
+        md: "1px solid white",
+      }}
+      direction={{ md: "column" }}
+      alignItems={{ base: "center", md: "unset" }}
+      justifyContent={{ base: "space-between", md: "center" }}
+      paddingInline={{ base: "1.5rem", md: "unset" }}
+      paddingLeft={{ md: "10%" }}
     >
       <Text
         textTransform="uppercase"
         opacity={0.5}
         fontFamily="Spartan"
         fontWeight="bold"
-        fontSize={{ md: "0.5rem", lg: "0.6875rem" }}
-        lineHeight={{ md: "1rem", lg: "1.5625rem" }}
-        letterSpacing={{ md: "0.73px", lg: "1px" }}
+        fontSize={{ base: "0.5rem", lg: "0.6875rem" }}
+        lineHeight={{ base: "1rem", lg: "1.5625rem" }}
+        letterSpacing={{ base: "0.73px", lg: "1px" }}
       >
         {specName}
       </Text>
@@ -34,9 +39,9 @@ const PlanetInfoSpec: React.FC<PlanetInfoSpecProps> = ({
         textTransform="uppercase"
         fontFamily="Antonio"
         fontWeight="normal"
-        fontSize={{ md: "1.5rem", lg: "2.5rem" }}
+        fontSize={{ base: "1.25rem", md: "1.5rem", lg: "2.5rem" }}
         lineHeight={{ md: "auto", lg: "auto" }}
-        letterSpacing={{ md: "-0.9px", lg: "-1.5px" }}
+        letterSpacing={{ base: "-0.75px", md: "-0.9px", lg: "-1.5px" }}
       >
         {specValue}
       </Text>
@@ -51,10 +56,12 @@ const PlanetInfoSpecs = () => {
   return (
     <Grid
       className="planet-info__specs"
-      gridColumn={{ md: "3 / -3", lg: "3 / -3", xl: "5 / -5" }}
+      gridColumn={{ base: "2 / -2", md: "3 / -3", lg: "3 / -3", xl: "5 / -5" }}
+      // autoFlow={{ base: "column" }}
       gridRow={{ lg: "span 4 / -3" }}
-      gap={{ md: "1rem", lg: "2rem" }}
-      templateColumns="repeat(4, 1fr)"
+      gap={{ base: "0.5rem", md: "1rem", lg: "2rem" }}
+      templateColumns={{ md: "repeat(4, 1fr)" }}
+      templateRows={{ base: "repeat(4, 1fr)", md: "unset" }}
     >
       <PlanetInfoSpec specName="rotation time" specValue={rotation} />
       <PlanetInfoSpec specName="revolution time" specValue={revolution} />

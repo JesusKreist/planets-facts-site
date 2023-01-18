@@ -16,6 +16,7 @@ const PlanetInfoText = () => {
       justifyContent="space-between"
       gridColumn={{ base: "2 / -2", md: "1 / span 13", lg: "unset" }}
       textAlign={{ base: "center", md: "unset" }}
+      // border="2px solid white"
     >
       <Text
         fontSize={{ base: "2.5rem", md: "3rem", lg: "5rem" }}
