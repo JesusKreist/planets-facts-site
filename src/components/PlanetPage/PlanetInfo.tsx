@@ -1,6 +1,6 @@
 import { Grid } from "@chakra-ui/react";
 import React from "react";
-import PlanetInfoButtons from "./PlanetInfoButtons";
+import PlanetInfoSwitcher from "./PlanetInfoSwitcher";
 import PlanetInfoText from "./PlanetInfoText";
 
 const PlanetInfo = () => {
@@ -18,8 +18,8 @@ const PlanetInfo = () => {
       templateRows={{ lg: "1fr 33.8%" }}
       gap={{ lg: "2rem" }}
     >
-      <PlanetInfoText />
-      <PlanetInfoButtons />
+      {/* <PlanetInfoText /> */}
+      <PlanetInfoSwitcher />
     </Grid>
   );
 };

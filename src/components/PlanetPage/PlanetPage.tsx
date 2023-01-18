@@ -6,7 +6,7 @@ import { getPlanetDataByName } from "../../data/data";
 import { CurrentPlanet, usePlanetsStore } from "../../store/planetsStore";
 import PlanetImage from "./PlanetImage";
 import PlanetInfo from "./PlanetInfo";
-import PlanetInfoButtons from "./PlanetInfoButtons";
+import PlanetInfoButtons from "./PlanetInfoSwitcher";
 import PlanetInfoSpecs from "./PlanetInfoSpecs";
 import PlanetInfoText from "./PlanetInfoText";
 
@@ -64,12 +64,10 @@ const PlanetPage = () => {
       paddingBottom={{ md: "2rem", lg: "0" }}
       templateColumns="repeat(36, 1fr)"
     >
-      <PlanetImage />
+      {/* <PlanetImage /> */}
 
       <PlanetInfo />
-      {/* <Box border="2px solid red" gridColumn={{ md: "3 / -3" }}></Box> */}
-
-      <PlanetInfoSpecs />
+      {/* <PlanetInfoSpecs /> */}
     </Grid>
   );
 };
