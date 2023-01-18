@@ -24,24 +24,21 @@ const PlanetInfoSwitcher = () => {
     >
       <PlanetInfoButton
         infoNumber={1}
-        infoTitle={{ baseTitle: "OVERVIEW", mediumTitle: "OVERVIEW" }}
+        infoTitle="OVERVIEW"
         isActive={planetInfo === "overview"}
         planetColour={planetColour}
         onClick={() => setPlanetInfo("overview")}
       />
       <PlanetInfoButton
         infoNumber={2}
-        infoTitle={{
-          baseTitle: "STRUCTURE",
-          mediumTitle: "INTERNAL STRUCTURE",
-        }}
+        infoTitle="INTERNAL STRUCTURE"
         isActive={planetInfo === "structure"}
         planetColour={planetColour}
         onClick={() => setPlanetInfo("structure")}
       />
       <PlanetInfoButton
         infoNumber={3}
-        infoTitle={{ baseTitle: "SURFACE", mediumTitle: "SURFACE GEOLOGY" }}
+        infoTitle="SURFACE GEOLOGY"
         isActive={planetInfo === "geology"}
         planetColour={planetColour}
         onClick={() => setPlanetInfo("geology")}

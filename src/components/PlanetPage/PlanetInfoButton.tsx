@@ -1,16 +1,11 @@
 import { Flex, Text } from "@chakra-ui/react";
 import { loadGetInitialProps } from "next/dist/shared/lib/utils";
 
-interface InfoTitle {
-  baseTitle: string;
-  mediumTitle: string;
-}
-
 interface PlanetInfoButtonProps {
   planetColour: string;
   isActive: boolean;
   infoNumber: number;
-  infoTitle: InfoTitle;
+  infoTitle: string;
   onClick: () => void;
 }
 
@@ -60,7 +55,7 @@ const PlanetInfoButton: React.FC<PlanetInfoButtonProps> = ({
         lineHeight="25px"
         letterSpacing={{ md: "1.93", lg: "2.57px" }}
       >
-        {infoTitle.mediumTitle}
+        {infoTitle}
       </Text>
       <Text
         display={{ base: "block", md: "none" }}
@@ -70,7 +65,7 @@ const PlanetInfoButton: React.FC<PlanetInfoButtonProps> = ({
         lineHeight="auto"
         letterSpacing="1.93px"
       >
-        {infoTitle.baseTitle}
+        {infoTitle}
       </Text>
     </Flex>
   );
