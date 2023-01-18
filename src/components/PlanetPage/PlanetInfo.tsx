@@ -1,6 +1,7 @@
 import { Grid } from "@chakra-ui/react";
 import React from "react";
 import PlanetInfoSwitcher from "./PlanetInfoSwitcher";
+import PlanetInfoSwitcherMobile from "./PlanetInfoSwitcherMobile";
 import PlanetInfoText from "./PlanetInfoText";
 
 const PlanetInfo = () => {
@@ -8,6 +9,7 @@ const PlanetInfo = () => {
     <Grid
       //   border="2px solid red"
       gridColumn={{
+        base: "1 / -1",
         md: "3/ -3",
         lg: "24 / span 11",
         xl: "23 / span 10",
@@ -20,6 +22,7 @@ const PlanetInfo = () => {
     >
       {/* <PlanetInfoText /> */}
       <PlanetInfoSwitcher />
+      <PlanetInfoSwitcherMobile />
     </Grid>
   );
 };

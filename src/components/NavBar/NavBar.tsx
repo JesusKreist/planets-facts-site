@@ -14,13 +14,14 @@ const NavBar = () => {
       }}
       color="white"
       maxWidth={{ "2xl": "1440px" }}
-      border={{
-        base: "2px solid purple",
-        md: "2px solid yellow",
-        lg: "2px solid red",
-        xl: "2px solid blue",
-        "2xl": "2px solid green",
-      }}
+      // border={{
+      //   base: "2px solid purple",
+      //   md: "2px solid yellow",
+      //   lg: "2px solid red",
+      //   xl: "2px solid blue",
+      //   "2xl": "2px solid green",
+      // }}
+      borderBottom={{ base: "2px solid rgb(151, 151, 151, 0.2)", md: "unset" }}
       height={{ base: "67px", md: "160px", lg: "max(8vh, 80px)" }}
       margin="0 auto"
       alignContent={{ base: "center", md: "space-evenly", lg: "center" }}

@@ -47,22 +47,22 @@ const PlanetPage = () => {
 
   return (
     <Grid
-      className="planet-info"
+      className="planet-page"
       maxWidth={{ "2xl": "1440px" }}
       margin="0 auto"
       minHeight={{ lg: minHeightForLargeScreens }}
       // height={{ base: "880px", md: "unset", xl: "unset" }}
-      border={{
-        base: "2px solid purple",
-        md: "2px solid yellow",
-        lg: "2px solid red",
-        xl: "2px solid blue",
-        "2xl": "2px solid green",
-      }}
+      // border={{
+      //   base: "2px solid purple",
+      //   md: "2px solid yellow",
+      //   lg: "2px solid red",
+      //   xl: "2px solid blue",
+      //   "2xl": "2px solid green",
+      // }}
       templateRows={{ md: "25.2rem 15.82rem 5.5rem ", lg: "repeat(24, 1fr)" }}
       rowGap={{ md: "2rem", lg: "0" }}
       paddingBottom={{ md: "2rem", lg: "0" }}
-      templateColumns="repeat(36, 1fr)"
+      templateColumns={{ base: "repeat(14, 1fr)", md: "repeat(36, 1fr)" }}
     >
       {/* <PlanetImage /> */}
 
