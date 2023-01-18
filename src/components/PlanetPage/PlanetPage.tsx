@@ -51,7 +51,7 @@ const PlanetPage = () => {
       maxWidth={{ "2xl": "1440px" }}
       margin="0 auto"
       minHeight={{ lg: minHeightForLargeScreens }}
-      height={{ base: "880px", md: "unset", xl: "unset" }}
+      // height={{ base: "880px", md: "unset", xl: "unset" }}
       border={{
         base: "2px solid purple",
         md: "2px solid yellow",
@@ -61,11 +61,15 @@ const PlanetPage = () => {
       }}
       templateRows={{ md: "25.2rem 15.82rem 5.5rem ", lg: "repeat(24, 1fr)" }}
       rowGap={{ md: "2rem", lg: "0" }}
+      paddingBottom={{ md: "2rem", lg: "0" }}
       templateColumns="repeat(36, 1fr)"
     >
       <PlanetImage />
+
       <PlanetInfo />
-      {/* <PlanetInfoSpecs /> */}
+      {/* <Box border="2px solid red" gridColumn={{ md: "3 / -3" }}></Box> */}
+
+      <PlanetInfoSpecs />
     </Grid>
   );
 };

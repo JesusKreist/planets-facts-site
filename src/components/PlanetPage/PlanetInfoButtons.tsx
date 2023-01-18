@@ -21,7 +21,7 @@ const PlanetInfoButton: React.FC<PlanetInfoButtonProps> = ({
     <Flex
       bgColor={`${isActive ? planetColour : "transparent"}`}
       paddingBlock="0.3rem"
-      paddingLeft="2rem"
+      paddingLeft={{ md: "1rem", lg: "2rem" }}
       gap="1rem"
       width="100%"
       //   height="48px"

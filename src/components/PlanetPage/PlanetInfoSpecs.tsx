@@ -18,17 +18,15 @@ const PlanetInfoSpec: React.FC<PlanetInfoSpecProps> = ({
       direction="column"
       justifyContent="center"
       paddingLeft="10%"
-      // gridColumn="1 / span 6"
-      // gridRow="1"
     >
       <Text
         textTransform="uppercase"
         opacity={0.5}
         fontFamily="Spartan"
         fontWeight="bold"
-        fontSize="0.6875rem"
-        lineHeight="1.5625rem"
-        letterSpacing="1px"
+        fontSize={{ md: "0.5rem", lg: "0.6875rem" }}
+        lineHeight={{ md: "1rem", lg: "1.5625rem" }}
+        letterSpacing={{ md: "0.73px", lg: "1px" }}
       >
         {specName}
       </Text>
@@ -36,9 +34,9 @@ const PlanetInfoSpec: React.FC<PlanetInfoSpecProps> = ({
         textTransform="uppercase"
         fontFamily="Antonio"
         fontWeight="normal"
-        fontSize="2.5rem"
-        lineHeight="auto"
-        letterSpacing="-1.5px"
+        fontSize={{ md: "1.5rem", lg: "2.5rem" }}
+        lineHeight={{ md: "auto", lg: "auto" }}
+        letterSpacing={{ md: "-0.9px", lg: "-1.5px" }}
       >
         {specValue}
       </Text>
@@ -53,9 +51,9 @@ const PlanetInfoSpecs = () => {
   return (
     <Grid
       className="planet-info__specs"
-      gridColumn={{ lg: "3 / -3", xl: "5 / -5" }}
-      gridRow="span 4 / -3"
-      gap="2rem"
+      gridColumn={{ md: "3 / -3", lg: "3 / -3", xl: "5 / -5" }}
+      gridRow={{ lg: "span 4 / -3" }}
+      gap={{ md: "1rem", lg: "2rem" }}
       templateColumns="repeat(4, 1fr)"
     >
       <PlanetInfoSpec specName="rotation time" specValue={rotation} />

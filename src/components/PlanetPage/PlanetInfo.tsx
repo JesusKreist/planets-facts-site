@@ -6,7 +6,7 @@ import PlanetInfoText from "./PlanetInfoText";
 const PlanetInfo = () => {
   return (
     <Grid
-      border="2px solid red"
+      //   border="2px solid red"
       gridColumn={{
         md: "3/ -3",
         lg: "24 / span 11",
