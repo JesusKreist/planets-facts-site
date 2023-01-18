@@ -14,11 +14,11 @@ const PlanetInfoText = () => {
     <Flex
       direction="column"
       justifyContent="space-between"
-      gridColumn={{ md: "1 / span 13", lg: "unset" }}
+      gridColumn={{ base: "2 / -2", md: "1 / span 13", lg: "unset" }}
+      textAlign={{ base: "center", md: "unset" }}
     >
       <Text
-        style={{ hyphens: "none" }}
-        fontSize={{ md: "3rem", lg: "5rem" }}
+        fontSize={{ base: "2.5rem", md: "3rem", lg: "5rem" }}
         fontFamily="Antonio"
         fontWeight="medium"
         // height="31.9%"
@@ -27,15 +27,16 @@ const PlanetInfoText = () => {
         {currentPlanet.name}
       </Text>
       <Text
-        fontSize={{ md: "0.6875rem", lg: "0.875rem" }}
+        fontSize={{ base: "0.6875rem", lg: "0.875rem" }}
         fontFamily="Spartan"
         fontWeight="normal"
-        lineHeight={{ md: "1.375rem", lg: "1.5625rem" }}
+        lineHeight={{ base: "1.375rem", lg: "1.5625rem" }}
         width={{ md: "339px", lg: "unset" }}
       >
         {planetInfoText}
       </Text>
-      <Box opacity="0.5" fontSize={{ md: "0.75rem", lg: "0.875rem" }}>
+
+      <Box opacity="0.5" fontSize={{ base: "0.75rem", lg: "0.875rem" }}>
         <Text as="span" fontFamily="Spartan" fontWeight="regular">
           Source:{" "}
         </Text>

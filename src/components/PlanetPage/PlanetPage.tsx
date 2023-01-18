@@ -79,13 +79,18 @@ const PlanetPage = () => {
         margin="0 auto"
         minHeight={{ lg: minHeightForLargeScreens }}
         border="2px solid purple"
-        templateRows="3.125rem 18.75rem 14.6875rem 13.5rem"
-        rowGap={{ md: "2rem", lg: "0" }}
+        templateRows="3.125rem 18.75rem 2rem 14.6875rem 13.5rem"
         paddingBottom={{ md: "2rem", lg: "0" }}
         templateColumns={{ base: "repeat(14, 1fr)", md: "repeat(36, 1fr)" }}
       >
         <PlanetInfoSwitcherMobile />
         <PlanetImage />
+        <Box
+          className="spacer-div"
+          border="2px solid white"
+          gridColumn="1 / -1"
+        ></Box>
+        <PlanetInfoText />
 
         {/* <PlanetInfo />
       <PlanetInfoSpecs /> */}
