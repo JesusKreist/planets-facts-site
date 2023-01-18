@@ -25,7 +25,7 @@ const PlanetInfoButton: React.FC<PlanetInfoButtonProps> = ({
       gap="1rem"
       width="100%"
       //   height="48px"
-      height="28%"
+      height={{ md: "20%", lg: "28%" }}
       alignItems="center"
       borderWidth={isActive ? "0px" : "2px"}
       borderColor={isActive ? "transparent" : "rgb(151, 151, 151, 0.2)"}
@@ -70,7 +70,10 @@ const PlanetInfoSwitcher = () => {
     <Flex
       // border="2px solid blue"
       direction="column"
-      justifyContent="space-between"
+      justifyContent={{ md: "center", lg: "space-between" }}
+      gap={{ md: "1rem", lg: "unset" }}
+      // justifyContent="center"
+      gridColumn={{ md: "span 11 / -1", lg: "unset" }}
     >
       <PlanetInfoButton
         infoNumber={1}

@@ -5,6 +5,7 @@ import useAvailableScreenSize from "../../../hooks/useAvailableScreenSize";
 import { getPlanetDataByName } from "../../data/data";
 import { CurrentPlanet, usePlanetsStore } from "../../store/planetsStore";
 import PlanetImage from "./PlanetImage";
+import PlanetInfo from "./PlanetInfo";
 import PlanetInfoButtons from "./PlanetInfoButtons";
 import PlanetInfoSpecs from "./PlanetInfoSpecs";
 import PlanetInfoText from "./PlanetInfoText";
@@ -63,19 +64,8 @@ const PlanetPage = () => {
       templateColumns="repeat(36, 1fr)"
     >
       <PlanetImage />
-      <Grid
-        border="2px solid red"
-        gridColumn={{ md: "3/ -3", lg: "24 / span 11", xl: "24 / span 9" }}
-        gridRow={{ lg: "3 / span 14" }}
-        templateColumns={{ md: "repeat(27, 1fr)", lg: "unset" }}
-        // templateRows={{ lg: "1fr 33.8%" }}
-        gap={{ lg: "2rem" }}
-      >
-        <PlanetInfoText />
-        {/* <PlanetInfoButtons /> */}
-      </Grid>
-
-      {/* <PlanetInfoSpecs /> */}
+      <PlanetInfo />
+      <PlanetInfoSpecs />
     </Grid>
   );
 };
