@@ -12,13 +12,12 @@ const PlanetInfoSwitcher = () => {
   return (
     <Flex
       border="2px solid green"
-      direction={{ md: "column" }}
+      direction="column"
       display={{ base: "none", md: "flex" }}
-      // justifyContent={{
-      //   base: "space-between",
-      //   md: "center",
-      //   lg: "space-between",
-      // }}
+      justifyContent={{
+        md: "center",
+        lg: "space-between",
+      }}
       gap={{ md: "1rem", lg: "unset" }}
       gridColumn={{ md: "span 11 / -1", lg: "unset" }}
     >

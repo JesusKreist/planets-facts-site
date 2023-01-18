@@ -20,9 +20,8 @@ const PlanetInfo = () => {
       templateRows={{ lg: "1fr 33.8%" }}
       gap={{ lg: "2rem" }}
     >
-      {/* <PlanetInfoText /> */}
+      <PlanetInfoText />
       <PlanetInfoSwitcher />
-      <PlanetInfoSwitcherMobile />
     </Grid>
   );
 };
