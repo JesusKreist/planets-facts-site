@@ -20,24 +20,21 @@ const PlanetInfoSwitcherMobile = () => {
       <Flex gridColumn="2 / -2" justifyContent="space-between">
         <PlanetInfoButtonMobile
           infoNumber={1}
-          infoTitle={{ baseTitle: "OVERVIEW", mediumTitle: "OVERVIEW" }}
+          infoTitle="OVERVIEW"
           isActive={planetInfo === "overview"}
           planetColour={planetColour}
           onClick={() => setPlanetInfo("overview")}
         />
         <PlanetInfoButtonMobile
           infoNumber={2}
-          infoTitle={{
-            baseTitle: "STRUCTURE",
-            mediumTitle: "INTERNAL STRUCTURE",
-          }}
+          infoTitle="STRUCTURE"
           isActive={planetInfo === "structure"}
           planetColour={planetColour}
           onClick={() => setPlanetInfo("structure")}
         />
         <PlanetInfoButtonMobile
           infoNumber={3}
-          infoTitle={{ baseTitle: "SURFACE", mediumTitle: "SURFACE GEOLOGY" }}
+          infoTitle="SURFACE"
           isActive={planetInfo === "geology"}
           planetColour={planetColour}
           onClick={() => setPlanetInfo("geology")}
