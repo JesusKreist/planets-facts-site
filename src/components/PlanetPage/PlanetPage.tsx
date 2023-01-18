@@ -79,15 +79,15 @@ const PlanetPage = () => {
         margin="0 auto"
         minHeight={{ lg: minHeightForLargeScreens }}
         border="2px solid purple"
-        templateRows={{ md: "25.2rem 15.82rem 5.5rem ", lg: "repeat(24, 1fr)" }}
+        templateRows="3.125rem 18.75rem 14.6875rem 13.5rem"
         rowGap={{ md: "2rem", lg: "0" }}
         paddingBottom={{ md: "2rem", lg: "0" }}
         templateColumns={{ base: "repeat(14, 1fr)", md: "repeat(36, 1fr)" }}
       >
         <PlanetInfoSwitcherMobile />
-        {/* <PlanetImage />
+        <PlanetImage />
 
-      <PlanetInfo />
+        {/* <PlanetInfo />
       <PlanetInfoSpecs /> */}
       </Grid>
     </>

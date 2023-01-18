@@ -16,7 +16,7 @@ const PlanetInfoSwitcherMobile = () => {
       borderBottom="2px solid rgb(151, 151, 151, 0.2)"
       templateColumns="repeat(14, 1fr)"
       display={{ base: "grid", md: "none" }}
-      height="3.125rem"
+      // height="3.125rem"
     >
       <Flex gridColumn="2 / -2" justifyContent="space-between">
         <PlanetInfoButtonMobile

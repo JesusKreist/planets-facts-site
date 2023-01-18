@@ -34,6 +34,17 @@ const PlanetImage = () => {
     neptune: "285px",
   };
 
+  const mobileHeights = {
+    mercury: "111px",
+    venus: "154px",
+    earth: "173px",
+    mars: "129px",
+    jupiter: "224px",
+    saturn: "256px",
+    uranus: "176px",
+    neptune: "173px",
+  };
+
   useEffect(() => {
     switch (planetInfo) {
       case "overview":
@@ -55,7 +66,7 @@ const PlanetImage = () => {
       alignItems="center"
       justifyContent="center"
       // border="2px solid white"
-      gridColumn={{ md: "3 / -3", lg: "3 / 21", xl: "5 / 20" }}
+      gridColumn={{ base: "1 / -1", md: "3 / -3", lg: "3 / 21", xl: "5 / 20" }}
       gridRow={{ lg: "3 / 18" }}
       position="relative"
     >
@@ -78,10 +89,10 @@ const PlanetImage = () => {
         height="100%"
         bgImage={currentImage}
         bgSize={{
+          base: `${mobileHeights[planetName]}`,
           md: `${tabletHeights[planetName]}`,
           lg: planetIsSaturnOrJupiter ? "contain" : "auto",
         }}
-        // bgSize="contain"
         bgRepeat="no-repeat"
         bgPosition="center"
         // border="3px solid red"
