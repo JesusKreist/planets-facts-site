@@ -1,9 +1,13 @@
-import { Box, Flex, Grid } from "@chakra-ui/react";
-import React from "react";
-import MobileMenu from "../MobileMenu/MobileMenu";
-import NavBar from "../NavBar/NavBar";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const Homepage = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push("/mercury");
+  }, [router]);
+
   return (
     // <Box
     //   position="relative"

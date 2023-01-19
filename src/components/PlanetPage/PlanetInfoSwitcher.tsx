@@ -11,7 +11,6 @@ const PlanetInfoSwitcher = () => {
 
   return (
     <Flex
-      border="2px solid green"
       direction="column"
       display={{ base: "none", md: "flex" }}
       justifyContent={{
