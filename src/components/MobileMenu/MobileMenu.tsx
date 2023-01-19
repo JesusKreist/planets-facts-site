@@ -45,7 +45,6 @@ interface MenuItemProps {
 const MenuItem: React.FC<MenuItemProps> = ({ planetName, iconColour }) => {
   return (
     <Flex
-      zIndex="100"
       gridColumn="2 / -2"
       alignItems="center"
       gap="1rem"
@@ -84,23 +83,29 @@ const MobileMenu = () => {
   }, [isMobileMenuOpen]);
 
   return (
-    <Grid
-      className="mobile-menu"
-      templateColumns="repeat(14, 1fr)"
-      position="absolute"
-      height="487px"
+    <Box
       width="100%"
-      // border="2px solid green"
-      display={{ base: `${isMenuOpen ? "grid" : "none"}`, md: "none" }}
+      position="absolute"
+      border="2px solid green"
+      height="100vh"
+      bgColor="black"
+      zIndex="100"
     >
-      {planetsWithIconsColor.map((planet) => (
-        <MenuItem
-          key={Math.random() * 1000}
-          planetName={planet[0]}
-          iconColour={planet[1]}
-        ></MenuItem>
-      ))}
-    </Grid>
+      <Grid
+        className="mobile-menu"
+        templateColumns="repeat(14, 1fr)"
+        height="487px"
+        display={{ base: `${isMenuOpen ? "grid" : "none"}`, md: "none" }}
+      >
+        {planetsWithIconsColor.map((planet) => (
+          <MenuItem
+            key={Math.random() * 1000}
+            planetName={planet[0]}
+            iconColour={planet[1]}
+          ></MenuItem>
+        ))}
+      </Grid>
+    </Box>
   );
 };
 
