@@ -41,8 +41,13 @@ const MenuItemIcon = (
 interface MenuItemProps {
   planetName: string;
   iconColour: string;
+  onClick?: () => void;
 }
-const MenuItem: React.FC<MenuItemProps> = ({ planetName, iconColour }) => {
+const MenuItem: React.FC<MenuItemProps> = ({
+  planetName,
+  iconColour,
+  onClick,
+}) => {
   return (
     <Flex
       gridColumn="2 / -2"
@@ -53,6 +58,9 @@ const MenuItem: React.FC<MenuItemProps> = ({ planetName, iconColour }) => {
         planetName.toLocaleLowerCase() === "neptune" ? "0px" : "1px"
       }
       borderBottomColor="rgb(151, 151, 151, 0.1)"
+      as={Link}
+      href={`/${planetName}`}
+      onClick={onClick}
     >
       <MenuItemIcon boxSize={"20px"} color={iconColour} />
 
@@ -66,7 +74,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ planetName, iconColour }) => {
         {planetName.toUpperCase()}
       </Text>
 
-      <Box marginLeft="auto" as={Link} href={`/${planetName}`}>
+      <Box marginLeft="auto">
         <ChevronRightIcon boxSize={5} color="gray.500" />
       </Box>
     </Flex>
@@ -75,19 +83,13 @@ const MenuItem: React.FC<MenuItemProps> = ({ planetName, iconColour }) => {
 
 const MobileMenu = () => {
   const isMobileMenuOpen = useMobileMenuStore((state) => state.isOpen);
-
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    setIsMenuOpen(isMobileMenuOpen);
-  }, [isMobileMenuOpen]);
+  const toggleMobileMenu = useMobileMenuStore((state) => state.toggle);
 
   return (
     <Box
-      display={{ base: `${isMenuOpen ? "grid" : "none"}`, md: "none" }}
+      display={{ base: `${isMobileMenuOpen ? "grid" : "none"}`, md: "none" }}
       width="100%"
       position="absolute"
-      border="2px solid green"
       height="100vh"
       bgImage="/assets/background-stars.svg"
       bgColor="#070724"
@@ -103,6 +105,7 @@ const MobileMenu = () => {
             key={Math.random() * 1000}
             planetName={planet[0]}
             iconColour={planet[1]}
+            onClick={() => toggleMobileMenu()}
           ></MenuItem>
         ))}
       </Grid>
