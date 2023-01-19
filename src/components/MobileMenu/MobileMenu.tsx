@@ -84,18 +84,19 @@ const MobileMenu = () => {
 
   return (
     <Box
+      display={{ base: `${isMenuOpen ? "grid" : "none"}`, md: "none" }}
       width="100%"
       position="absolute"
       border="2px solid green"
       height="100vh"
-      bgColor="black"
+      bgImage="/assets/background-stars.svg"
+      bgColor="#070724"
       zIndex="100"
     >
       <Grid
         className="mobile-menu"
         templateColumns="repeat(14, 1fr)"
         height="487px"
-        display={{ base: `${isMenuOpen ? "grid" : "none"}`, md: "none" }}
       >
         {planetsWithIconsColor.map((planet) => (
           <MenuItem
