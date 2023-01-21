@@ -16,7 +16,7 @@ const PlanetInfoSpec: React.FC<PlanetInfoSpecProps> = ({
       height="100%"
       border={{
         base: "2px solid rgb(151, 151, 151, 0.2)",
-        md: "1px solid white",
+        md: "2px solid rgb(151, 151, 151, 0.2)",
       }}
       direction={{ md: "column" }}
       alignItems={{ base: "center", md: "unset" }}
