@@ -1,5 +1,11 @@
 import { Grid, Heading } from "@chakra-ui/react";
-import React from "react";
+import { motion } from "framer-motion";
+import Typed from "typed.js";
+import { useEffect, useRef } from "react";
+import {
+  slideFromLeft,
+  slideFromTop,
+} from "../../../animation/animationVariants";
 import NavBarLinks from "./NavBarLinks";
 
 const NavBar = () => {
@@ -27,7 +33,10 @@ const NavBar = () => {
       alignContent={{ base: "center", md: "space-evenly", lg: "center" }}
     >
       <Heading
-        as="h1"
+        as={motion.h1}
+        variants={slideFromLeft()}
+        initial="start"
+        animate="end"
         alignSelf="center"
         fontFamily="Antonio"
         fontSize="1.75rem"

@@ -2,13 +2,36 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { Link } from "@chakra-ui/react";
 import { usePlanetsStore } from "../../store/planetsStore";
+import Typed from "typed.js";
+import { useRef, useEffect } from "react";
 
 const PlanetInfoText = () => {
   const currentPlanet = usePlanetsStore((state) => state.currentPlanet);
   const planetInfo = usePlanetsStore((state) => state.planetInfo);
 
+  const el = useRef(null);
+
   const planetInfoText = `${currentPlanet[planetInfo].content}`;
   const planetInfoSource = `${currentPlanet[planetInfo].source}`;
+
+  useEffect(() => {
+    const options = {
+      strings: [planetInfoText], // Strings to display
+      // Speed settings, try diffrent values untill you get good results
+      startDelay: 300,
+      typeSpeed: 20,
+      backSpeed: 100,
+      backDelay: 100,
+      showCursor: false,
+    };
+    if (el.current) {
+      const typed = new Typed(el.current, options);
+
+      return () => {
+        typed.destroy();
+      };
+    }
+  }, [planetInfoText]);
 
   return (
     <Flex
@@ -16,13 +39,11 @@ const PlanetInfoText = () => {
       justifyContent="space-between"
       gridColumn={{ base: "2 / -2", md: "1 / span 13", lg: "unset" }}
       textAlign={{ base: "center", md: "unset" }}
-      // border="2px solid white"
     >
       <Text
         fontSize={{ base: "2.5rem", md: "3rem", lg: "5rem" }}
         fontFamily="Antonio"
         fontWeight="medium"
-        // height="31.9%"
         height={{ md: "19.9%", lg: "unset" }}
       >
         {currentPlanet.name}
@@ -33,6 +54,7 @@ const PlanetInfoText = () => {
         fontWeight="normal"
         lineHeight={{ base: "1.375rem", lg: "1.5625rem" }}
         width={{ md: "339px", lg: "unset" }}
+        ref={el}
       >
         {planetInfoText}
       </Text>

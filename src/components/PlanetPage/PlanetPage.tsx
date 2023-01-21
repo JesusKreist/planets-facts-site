@@ -6,7 +6,6 @@ import { getPlanetDataByName } from "../../data/data";
 import { CurrentPlanet, usePlanetsStore } from "../../store/planetsStore";
 import PlanetImage from "./PlanetImage";
 import PlanetInfo from "./PlanetInfo";
-import PlanetInfoButtons from "./PlanetInfoSwitcher";
 import PlanetInfoSpecs from "./PlanetInfoSpecs";
 import PlanetInfoText from "./PlanetInfoText";
 import PlanetInfoSwitcherMobile from "./PlanetInfoSwitcherMobile";
