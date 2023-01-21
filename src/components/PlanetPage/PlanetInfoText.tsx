@@ -20,8 +20,6 @@ const PlanetInfoText = () => {
       // Speed settings, try diffrent values untill you get good results
       startDelay: 300,
       typeSpeed: 20,
-      backSpeed: 100,
-      backDelay: 100,
       showCursor: false,
     };
     if (el.current) {
