@@ -1,5 +1,7 @@
 import { Box, Flex, Image } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import { heartBeat, slideInCard } from "../../../animation/animationVariants";
 import { usePlanetsStore } from "../../store/planetsStore";
 
 type PlanetName =
@@ -63,6 +65,13 @@ const PlanetImage = () => {
 
   return (
     <Flex
+      key={`${planetName}-${planetInfo}-image`}
+      as={motion.div}
+      variants={slideInCard}
+      initial="offscreen"
+      animate="onscreen"
+      viewport={{ once: true, amount: 0.8 }}
+      exit="exit"
       alignItems="center"
       justifyContent="center"
       // border="2px solid white"
@@ -71,6 +80,13 @@ const PlanetImage = () => {
       position="relative"
     >
       <Box
+        key={`${planetName}-${planetInfo}-image-geology`}
+        as={motion.div}
+        variants={heartBeat}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
+        exit="exit"
         className="planet-image__geology"
         width={{ base: "20%", md: "15%", lg: "25.2%" }}
         height="58.62%"
