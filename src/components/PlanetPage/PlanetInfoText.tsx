@@ -24,7 +24,6 @@ const PlanetInfoText = () => {
       showCursor: false,
     };
 
-    // typed.current = new Typed(el.current, options);
     // @ts-ignore
     const typed = new Typed(el.current, options);
 
