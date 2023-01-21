@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, Heading, Text } from "@chakra-ui/react";
+import { Grid, Heading } from "@chakra-ui/react";
 import React from "react";
 import NavBarLinks from "./NavBarLinks";
 

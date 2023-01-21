@@ -72,7 +72,7 @@ const PlanetImage = () => {
     >
       <Box
         className="planet-image__geology"
-        width={{ md: "15%", lg: "25.2%" }}
+        width={{ base: "20%", md: "15%", lg: "25.2%" }}
         height="58.62%"
         top="50%"
         left={{ md: "unset", lg: "37.6%" }}
@@ -95,7 +95,6 @@ const PlanetImage = () => {
         }}
         bgRepeat="no-repeat"
         bgPosition="center"
-        // border="3px solid red"
       ></Box>
 
       {/* <Box
