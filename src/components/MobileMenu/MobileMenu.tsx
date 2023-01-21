@@ -13,7 +13,11 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { SVGProps, useEffect, useState } from "react";
-import { slideInCard } from "../../../animation/animationVariants";
+import {
+  childMobileMenu,
+  parentMobileMenu,
+  slideInCard,
+} from "../../../animation/animationVariants";
 import { useMobileMenuStore } from "../../store/state";
 
 const planetsWithIconsColor = [
@@ -52,17 +56,16 @@ const MenuItem: React.FC<MenuItemProps> = ({
 }) => {
   return (
     <Flex
-      gridColumn="2 / -2"
       alignItems="center"
       gap="1rem"
-      className="menu-item"
+      height="100%"
+      as={Link}
+      href={`/${planetName}`}
+      onClick={onClick}
       borderBottomWidth={
         planetName.toLocaleLowerCase() === "neptune" ? "0px" : "1px"
       }
       borderBottomColor="rgb(151, 151, 151, 0.1)"
-      as={Link}
-      href={`/${planetName}`}
-      onClick={onClick}
     >
       <MenuItemIcon boxSize={"20px"} color={iconColour} />
 
@@ -100,24 +103,47 @@ const MobileMenu = () => {
           zIndex="100"
           as={motion.div}
           variants={slideInCard}
-          initial="offscreen"
-          animate="onscreen"
+          // initial="offscreen"
+          // animate="onscreen"
           viewport={{ once: true, amount: 0.8 }}
           exit="exit"
         >
           <Grid
             className="mobile-menu"
-            templateColumns="repeat(14, 1fr)"
+            gridTemplateColumns="repeat(14, 1fr)"
+            display="grid"
             height="487px"
+            as={motion.div}
+            initial="hidden"
+            animate="visible"
+            variants={parentMobileMenu}
           >
             {planetsWithIconsColor.map((planet) => (
+              <Box
+                key={Math.random() * 1000}
+                gridColumn="2 / -2"
+                className="menu-item"
+                as={motion.div}
+                variants={childMobileMenu}
+              >
+                {
+                  <MenuItem
+                    planetName={planet[0]}
+                    iconColour={planet[1]}
+                    onClick={() => toggleMobileMenu()}
+                  ></MenuItem>
+                }
+              </Box>
+            ))}
+
+            {/* {planetsWithIconsColor.map((planet) => (
               <MenuItem
                 key={Math.random() * 1000}
                 planetName={planet[0]}
                 iconColour={planet[1]}
                 onClick={() => toggleMobileMenu()}
               ></MenuItem>
-            ))}
+            ))} */}
           </Grid>
         </Box>
       )}

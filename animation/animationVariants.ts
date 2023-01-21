@@ -1,5 +1,30 @@
 import { Variants } from "framer-motion";
 
+export const parentMobileMenu = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0, // this will set a delay before the children start animating
+      staggerChildren: 0.1,
+      duration: 1, // this will set the time inbetween children animation
+    },
+  },
+};
+
+export const childMobileMenu = {
+  hidden: {
+    y: "-100vw",
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
+
 export const heartBeat: Variants = {
   offscreen: {
     scale: 0.9,
@@ -24,7 +49,7 @@ export const slideInCard: Variants = {
   },
   exit: {
     x: "-100vw",
-    transition: { ease: "easeInOut" },
+    transition: { ease: "easeInOut", duration: 1 },
   },
 };
 
