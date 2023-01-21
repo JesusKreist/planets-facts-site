@@ -4,12 +4,13 @@ import { Link } from "@chakra-ui/react";
 import { usePlanetsStore } from "../../store/planetsStore";
 import Typed from "typed.js";
 import { useRef, useEffect } from "react";
+import Typewriter from "typewriter-effect";
 
 const PlanetInfoText = () => {
   const currentPlanet = usePlanetsStore((state) => state.currentPlanet);
   const planetInfo = usePlanetsStore((state) => state.planetInfo);
 
-  const el = useRef(null);
+  const el = useRef<HTMLParagraphElement>(null);
 
   const planetInfoText = `${currentPlanet[planetInfo].content}`;
   const planetInfoSource = `${currentPlanet[planetInfo].source}`;
@@ -20,17 +21,16 @@ const PlanetInfoText = () => {
       // Speed settings, try diffrent values untill you get good results
       startDelay: 300,
       typeSpeed: 20,
-      backSpeed: 100,
-      backDelay: 100,
       showCursor: false,
     };
-    if (el.current) {
-      const typed = new Typed(el.current, options);
 
-      return () => {
-        typed.destroy();
-      };
-    }
+    // typed.current = new Typed(el.current, options);
+    // @ts-ignore
+    const typed = new Typed(el.current, options);
+
+    return () => {
+      typed.destroy();
+    };
   }, [planetInfoText]);
 
   return (
@@ -56,7 +56,17 @@ const PlanetInfoText = () => {
         width={{ md: "339px", lg: "unset" }}
         ref={el}
       >
-        {planetInfoText}
+        {/* <Typewriter
+          onInit={(typewriter) => {
+            typewriter
+              .typeString(planetInfoText)
+              .callFunction(() => {
+                console.log("String typed out!");
+              })
+
+              .start();
+          }}
+        /> */}
       </Text>
 
       <Box opacity="0.5" fontSize={{ base: "0.75rem", lg: "0.875rem" }}>
