@@ -33,6 +33,7 @@ export default function App({ Component, pageProps }: AppProps) {
         bgColor="#070724"
       >
         <NavBar />
+        <Box bgColor="rgb(151, 151, 151, 0.2)" height="1.5px"></Box>
         <MobileMenu />
         <Component {...pageProps} />
       </Box>
