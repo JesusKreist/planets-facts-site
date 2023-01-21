@@ -1,6 +1,8 @@
 import { Flex, Heading, IconButton } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { slideFromRight } from "../../../animation/animationVariants";
 import { useMobileMenuStore } from "../../store/state";
 
 const planets = [
@@ -66,6 +68,10 @@ const NavBarLinks = () => {
         justifyContent="space-between"
         gridColumn={{ md: "2 / -2", lg: "span 20 / -3", xl: "20 / -2" }}
         alignItems="center"
+        as={motion.div}
+        variants={slideFromRight()}
+        initial="start"
+        animate="end"
       >
         {planets.map((planet) => (
           <Link href={`/${planet.toLowerCase()}`} key={Math.random() * 1000}>
