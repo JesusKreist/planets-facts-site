@@ -10,8 +10,10 @@ import {
   OmitCommonProps,
   Text,
 } from "@chakra-ui/react";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { SVGProps, useEffect, useState } from "react";
+import { slideInCard } from "../../../animation/animationVariants";
 import { useMobileMenuStore } from "../../store/state";
 
 const planetsWithIconsColor = [
@@ -86,30 +88,40 @@ const MobileMenu = () => {
   const toggleMobileMenu = useMobileMenuStore((state) => state.toggle);
 
   return (
-    <Box
-      display={{ base: `${isMobileMenuOpen ? "grid" : "none"}`, md: "none" }}
-      width="100%"
-      position="absolute"
-      height="100vh"
-      bgImage="/assets/background-stars.svg"
-      bgColor="#070724"
-      zIndex="100"
-    >
-      <Grid
-        className="mobile-menu"
-        templateColumns="repeat(14, 1fr)"
-        height="487px"
-      >
-        {planetsWithIconsColor.map((planet) => (
-          <MenuItem
-            key={Math.random() * 1000}
-            planetName={planet[0]}
-            iconColour={planet[1]}
-            onClick={() => toggleMobileMenu()}
-          ></MenuItem>
-        ))}
-      </Grid>
-    </Box>
+    <AnimatePresence>
+      {isMobileMenuOpen && (
+        <Box
+          display={{ base: "grid", md: "none" }}
+          width="100%"
+          position="absolute"
+          height="100vh"
+          bgImage="/assets/background-stars.svg"
+          bgColor="#070724"
+          zIndex="100"
+          as={motion.div}
+          variants={slideInCard}
+          initial="offscreen"
+          animate="onscreen"
+          viewport={{ once: true, amount: 0.8 }}
+          exit="exit"
+        >
+          <Grid
+            className="mobile-menu"
+            templateColumns="repeat(14, 1fr)"
+            height="487px"
+          >
+            {planetsWithIconsColor.map((planet) => (
+              <MenuItem
+                key={Math.random() * 1000}
+                planetName={planet[0]}
+                iconColour={planet[1]}
+                onClick={() => toggleMobileMenu()}
+              ></MenuItem>
+            ))}
+          </Grid>
+        </Box>
+      )}
+    </AnimatePresence>
   );
 };
 

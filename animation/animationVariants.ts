@@ -16,11 +16,9 @@ export const heartBeat: Variants = {
 
 export const slideInCard: Variants = {
   offscreen: {
-    scale: 0.9,
     x: 90,
   },
   onscreen: {
-    scale: 1,
     x: 0,
     transition: { x: { duration: 1 } },
   },
